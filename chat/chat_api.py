@@ -55,7 +55,7 @@ def message():
 
     MESSAGES.append({
         "username":  cleaner.clean(data['username'].strip().removeprefix("<p>").removesuffix("</p>")),
-        "ip":        str(request.access_route[-1]),
+        "ip":        str(request.access_route[0]),
         "timestamp": dt.datetime.now().isoformat(),
         "content":   cleaner.clean(mistletoe.markdown(data['content']).strip().removeprefix("<p>").removesuffix("</p>"))
     })
